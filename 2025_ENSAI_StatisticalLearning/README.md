@@ -10,19 +10,19 @@ Tester un grand ensemble de modèles de machine learning pour prédire le prix d
 
 # Structure du projet
 ```
-`project/`
+project/
 │
-├── `data/`
-│ ├── `AmesHousing.csv` # Données brutes
+├── data/
+│ ├── AmesHousing.csv # Données brutes
 │
-├── `notebooks/`
-│ ├── `Statistical learning in ML.ipynb` # Nettoyage des données
+├── notebooks/
+│ ├── Statistical learning in ML.ipynb # Nettoyage des données
 │
-├── `src/`
+├── src/
 │
-└── `outputs/` # Visualisations sauvegardées
-│ ├── `Summary of regression model metrics.png`
-└─└── `Summary of classification model metrics.png`
+└── outputs/ # Visualisations sauvegardées
+│ ├── Summary of regression model metrics.png
+└─└── Summary of classification model metrics.png
 ```
 
 # Jeu de données
@@ -31,7 +31,7 @@ Tester un grand ensemble de modèles de machine learning pour prédire le prix d
 
 **Caractéristiques principales**:
 - 2930 observations (maisons)
-- Variable cible: `SalePrice` (prix de vente)
+- Variable cible: SalePrice (prix de vente)
 
 
 # Méthodologie
