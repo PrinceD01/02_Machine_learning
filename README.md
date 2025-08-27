@@ -8,5 +8,5 @@ Il existe 2 grandes catégories de modèles :
 - Régression → "Quel prix/mesure ?"
 
 Vous trouverez les projets suivants : 
-- 2023_LYON2-UNIVERSITY_
 - 2025_ENSAI_StatisticalLearning
+- 2025_PERSO_ScoringAppetence
