@@ -1,0 +1,555 @@
+[
+  {
+    "name": "_ID_",
+    "type": "category",
+    "order": null,
+    "label": "ID"
+  },
+  {
+    "name": "FL_ACHAT_PRODUIT",
+    "type": "bool",
+    "order": null,
+    "label": "CIBLE"
+  },
+  {
+    "name": "STATUT_SOCIETE",
+    "type": "category",
+    "order": null,
+    "label": "Statut société"
+  },
+  {
+    "name": "ETAPE_OPPORTUNITE",
+    "type": "category",
+    "order": null,
+    "label": "Étape opportunité"
+  },
+  {
+    "name": "TYPE_PRODUIT_OPPORTUNITE",
+    "type": "category",
+    "order": null,
+    "label": "Type produit opportunité"
+  },
+  {
+    "name": "MONTANT_OPPORTUNITE",
+    "type": "float",
+    "order": null,
+    "label": "Montant opportunité"
+  },
+  {
+    "name": "GAIN_OPPORTUNITE",
+    "type": "float",
+    "order": null,
+    "label": "Gain opportunité"
+  },
+  {
+    "name": "PROBABILITE_OPPORTUNITE",
+    "type": "float",
+    "order": null,
+    "label": "Probabilité opportunité"
+  },
+  {
+    "name": "STATUT_ACTIVITE",
+    "type": "category",
+    "order": null,
+    "label": "Statut activité"
+  },
+  {
+    "name": "PROFIL_CLIENT",
+    "type": "category",
+    "order": null,
+    "label": "Profil client"
+  },
+  {
+    "name": "SEGMENT",
+    "type": "category",
+    "order": null,
+    "label": "Segment"
+  },
+  {
+    "name": "SOUS_SEGMENT",
+    "type": "category",
+    "order": null,
+    "label": "Sous-segment"
+  },
+  {
+    "name": "SEGMENT_BUMP",
+    "type": "category",
+    "order": null,
+    "label": "Segment bump"
+  },
+  {
+    "name": "CA_ANNUEL_ADDITI_N",
+    "type": "float",
+    "order": null,
+    "label": "CA N"
+  },
+  {
+    "name": "CLASSE_PMG_N",
+    "type": "pd.Categorical",
+    "order": ["Très petit", "Petit", "Moyen", "Gros", "Très gros"],
+    "label": "PMG N"
+  },
+  {
+    "name": "CA_ANNUEL_ADDITI_N1",
+    "type": "float",
+    "order": null,
+    "label": "CA N-1"
+  },
+  {
+    "name": "CLASSE_PMG_N1",
+    "type": "pd.Categorical",
+    "order": ["Hors catégorie", "Très petit", "Petit", "Moyen", "Gros", "Très gros"],
+    "label": "PMG N-1"
+  },
+  {
+    "name": "CA_DIGITAL_ANNUEL_ADDITI_N",
+    "type": "float",
+    "order": null,
+    "label": "CA digital N"
+  },
+  {
+    "name": "PART_DIGITALISATION",
+    "type": "float",
+    "order": null,
+    "label": "Part digitalisation"
+  },
+  {
+    "name": "NB_ACHAT",
+    "type": "int",
+    "order": null,
+    "label": "Nombre d’achats"
+  },
+  {
+    "name": "MOY_DELAI_ACHAT",
+    "type": "float",
+    "order": null,
+    "label": "Délai moyen d’achat"
+  },
+  {
+    "name": "VAR_DELAI_ACHAT",
+    "type": "float",
+    "order": null,
+    "label": "Variance délai achat"
+  },
+  {
+    "name": "RECENCE",
+    "type": "float",
+    "order": null,
+    "label": "Récence"
+  },
+  {
+    "name": "SQRT_DELAI_ACHAT",
+    "type": "float",
+    "order": null,
+    "label": "Ecart-type délai achat"
+  },
+  {
+    "name": "INDICATEUR_RF",
+    "type": "pd.Categorical",
+    "order": ["Non calculé", "Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF"
+  },
+  {
+    "name": "INDICATEUR_MONTANT",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "Stable", "En avance"],
+    "label": "Indicateur montant"
+  },
+  {
+    "name": "INDICATEUR_RFM",
+    "type": "category",
+    "order": null,
+    "label": "Indicateur RFM"
+  },
+  {
+    "name": "NB_GP_PUB_CO",
+    "type": "int",
+    "order": null,
+    "label": "Nb GP pub co"
+  },
+  {
+    "name": "RF_GP_PUB_CO",
+    "type": "float",
+    "order": null,
+    "label": "RF GP pub co"
+  },
+  {
+    "name": "FL_RF_GP_PUB_CO",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF GP pub co"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_PUB_CO",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF GP pub co"
+  },
+    {
+    "name": "NB_GP_DISPLAY",
+    "type": "int",
+    "order": null,
+    "label": "Nb GP display"
+  },
+  {
+    "name": "RF_GP_DISPLAY",
+    "type": "float",
+    "order": null,
+    "label": "RF GP display"
+  },
+  {
+    "name": "FL_RF_GP_DISPLAY",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF GP display"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_DISPLAY",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF GP display"
+  },
+  {
+    "name": "NB_GP_PROG_BU",
+    "type": "int",
+    "order": null,
+    "label": "Nb GP prog BU"
+  },
+  {
+    "name": "RF_GP_PROG_BU",
+    "type": "float",
+    "order": null,
+    "label": "RF GP prog BU"
+  },
+  {
+    "name": "FL_RF_GP_PROG_BU",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF GP prog BU"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_PROG_BU",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF GP prog BU"
+  },
+  {
+    "name": "NB_GP_DIVERTO",
+    "type": "int",
+    "order": null,
+    "label": "Nb GP diverto"
+  },
+  {
+    "name": "RF_GP_DIVERTO",
+    "type": "float",
+    "order": null,
+    "label": "RF GP diverto"
+  },
+  {
+    "name": "FL_RF_GP_DIVERTO",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF GP diverto"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_DIVERTO",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF GP diverto"
+  },
+  {
+    "name": "NB_GP_AUTRE",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit autre"
+  },
+  {
+    "name": "RF_GP_AUTRE",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit autre"
+  },
+  {
+    "name": "FL_RF_GP_AUTRE",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit autre"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_AUTRE",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit autre"
+  },
+  {
+    "name": "NB_GP_SOCIAL",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit social"
+  },
+  {
+    "name": "RF_GP_SOCIAL",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit social"
+  },
+  {
+    "name": "FL_RF_GP_SOCIAL",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit social"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_SOCIAL",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit social"
+  },
+    {
+    "name": "NB_GP_SUPPLEMENT_PUB_CO",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit supplément pub co"
+  },
+  {
+    "name": "RF_GP_SUPPLEMENT_PUB_CO",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit supplément pub co"
+  },
+  {
+    "name": "FL_RF_GP_SUPPLEMENT_PUB_CO",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit supplément pub co"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_SUPPLEMENT_PUB_CO",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit Supplément pub co"
+  },
+  {
+    "name": "NB_GP_REF_PAYANT",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit réf payant"
+  },
+  {
+    "name": "RF_GP_REF_PAYANT",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit réf payant"
+  },
+  {
+    "name": "FL_RF_GP_REF_PAYANT",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit réf payant"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_REF_PAYANT",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit réf payant"
+  },
+  {
+    "name": "NB_GP_AD4",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit AD4"
+  },
+  {
+    "name": "RF_GP_AD4",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit AD4"
+  },
+  {
+    "name": "FL_RF_GP_AD4",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit AD4"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_AD4",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit AD4"
+  },
+  {
+    "name": "NB_GP_EMAILING",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit emailing"
+  },
+  {
+    "name": "RF_GP_EMAILING",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit emailing"
+  },
+  {
+    "name": "FL_RF_GP_EMAILING",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit emailing"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_EMAILING",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit emailing"
+  },
+  {
+    "name": "NB_GP_CM",
+    "type": "int",
+    "order": null,
+    "label": "Nb Gamme produit CM"
+  },
+  {
+    "name": "RF_GP_CM",
+    "type": "float",
+    "order": null,
+    "label": "RF Gamme produit CM"
+  },
+  {
+    "name": "FL_RF_GP_CM",
+    "type": "bool",
+    "order": null,
+    "label": "Flag RF Gamme produit CM"
+  },
+  {
+    "name": "INDICATEUR_RF_GP_CM",
+    "type": "pd.Categorical",
+    "order": ["Très en retard", "En retard", "En avance", "Très en avance"],
+    "label": "Indicateur RF Gamme produit CM"
+  },
+  {
+    "name": "FL_RELATION_CLIENT_3M",
+    "type": "bool",
+    "order": null,
+    "label": "Relation client 3M"
+  },
+  {
+    "name": "FL_RELATION_CLIENT_6M",
+    "type": "bool",
+    "order": null,
+    "label": "Relation client 6M"
+  },
+  {
+    "name": "FL_RELATION_CLIENT_9M",
+    "type": "bool",
+    "order": null,
+    "label": "Relation client 9M"
+  },
+  {
+    "name": "RECENCE_CREATION_ENTREPRISE",
+    "type": "float",
+    "order": null,
+    "label": "Récence création entreprise"
+  },
+  {
+    "name": "RECENCE_OPPORTUNITE",
+    "type": "float",
+    "order": null,
+    "label": "Récence opportunité"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_DISPLAY",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP display"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_REF_PAYANT",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP réf payant"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_CM",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP CM"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_SUPPLEMENT_PUB_CO",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP supplément pub co"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_AD4",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP AD4"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_AUTRE",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP autre"
+  },
+  {
+    "name": "RECENCE_DERNIERE_RELATION_CLIENT",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière relation client"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_PUB_CO",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP pub co"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_SOCIAL",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP social"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_DIVERTO",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP diverto"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_EMAILING",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP emailing"
+  },
+  {
+    "name": "RECENCE_DERNIERE_GP_PROG_BU",
+    "type": "float",
+    "order": null,
+    "label": "Récence dernière GP prog BU"
+  },
+    {
+    "name": "CD_DEPARTEMENT",
+    "type": "category",
+    "order": null,
+    "label": "Département"
+  },
+  {
+    "name": "REGION",
+    "type": "category",
+    "order": null,
+    "label": "Région"
+  },
+  {
+    "name": "MOIS_SAISON",
+    "type": "pd.Categorical",
+    "order": ["8", "7", "5", "6", "3", "9", "4", "11", "2", "1", "10", "12"],
+    "label": "Mois saison"
+  },
+  {
+    "name": "SAISON",
+    "type": "pd.Categorical",
+    "order": ["BASSE", "MOYENNE", "HAUTE", "TRES HAUTE"],
+    "label": "Saison"
+  }
+]
+
