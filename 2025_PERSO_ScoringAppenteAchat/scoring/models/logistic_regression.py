@@ -8,14 +8,15 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
 
 
+
 # Import du fichier d'évaluation des modèles
+sys.path.append(os.path.abspath(path="C:/Users/prince.mezuirotimi/OneDrive - Gedeon - SIPAOF/Documents/INTRASIPA/PROJETS/ADDITI - SCORING APPETENCE PRODUIT/03_models"))
 from evaluate_models import evaluate_model
 from scores_grid import get_scores_grid
 
 def apply_logistic_regression(data_train: pd.DataFrame,
                                 data_val: pd.DataFrame,
                                 data_test: pd.DataFrame,
-                                dict_encode_mapping: dict = None,
                                 target: str = 'FL_ACHAT_PRODUIT',
                                 threshold_decision: float = 0.5,
                                 beta: float = 1.0,
@@ -60,7 +61,7 @@ def apply_logistic_regression(data_train: pd.DataFrame,
     
     # Meilleur modèle
     best_model = grid_search.best_estimator_
-    score_grid_df = get_scores_grid(best_model, X_train, dict_encode_mapping) # Détermination de la grille de scores
+    score_grid_df = get_scores_grid(best_model, X_train) # Détermination de la grille de scores
 
     print("\t\t > Meilleurs paramètres trouvés :")
     print("\t\t\t", grid_search.best_params_)
@@ -80,7 +81,7 @@ def apply_logistic_regression(data_train: pd.DataFrame,
         beta=beta,
         lift_prct=lift_prct
     )
-    
+
     
     print("\t Modélisation Logistic Regression terminée.")
     print('---')

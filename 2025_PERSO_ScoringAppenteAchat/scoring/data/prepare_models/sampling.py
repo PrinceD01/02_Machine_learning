@@ -1,15 +1,6 @@
 # Setup environnement
-## Importation des bibliothèques
-import pandas as pd
-import numpy as np
+RANDOM_STATE = 241
 
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
-
-from collections import Counter
-
-from imblearn.over_sampling import BorderlineSMOTE
-from imblearn.under_sampling import ClusterCentroids
 
 
 # Fonction de sous-échantillonnage
@@ -52,7 +43,7 @@ def apply_under_sampling(df: pd.DataFrame,
         return df.copy()
 
     # Application de ClusterCentroids
-    cluster = ClusterCentroids(sampling_strategy={majoritaire: effectif_majo_cible}, random_state=241)
+    cluster = ClusterCentroids(sampling_strategy={majoritaire: effectif_majo_cible}, random_state=RANDOM_STATE)
     X_res, y_res = cluster.fit_resample(X, y)
 
     # Reconstruction DataFrame final
@@ -116,7 +107,7 @@ def apply_over_sampling(df: pd.DataFrame,
         k_neighbors=5,
         m_neighbors=11,
         kind='borderline-1',
-        random_state=241
+        random_state=RANDOM_STATE
     )
     X_res, y_res = smote.fit_resample(X, y)
 
@@ -141,11 +132,12 @@ def apply_over_sampling(df: pd.DataFrame,
 
 # Fonction de ré-échantillonnage
 def apply_sampling(df: pd.DataFrame,
+                   target: str = 'FL_ACHAT_PRODUIT',
                    strate: str = 'FL_ACHAT_PRODUIT',
                    sampling_seuil_min: float = 0.2,
                    sampling_mode: str = 'UNDER') -> pd.DataFrame:
     """
-    Fonction flexible de ré-échantillonnage des classes :
+    Fonction de ré-échantillonnage des classes :
     - 'UNDER' : applique uniquement ClusterCentroids sur la classe majoritaire
     - 'OVER'  : applique uniquement Borderline-SMOTE sur les classes minoritaires
 
@@ -158,15 +150,36 @@ def apply_sampling(df: pd.DataFrame,
     Retour :
         df_sampled : pd.DataFrame - Données ré-échantillonnées
     """
+    print('---')
+    print(f"\t Lancement du ré-échantillonnage en {sampling_mode.lower()}-sampling.")
     
+    print()
+    print("\t  > Tx d'acheteurs avant ré-échantillonnage : ", round(100 * df[target].mean(), 2), '%')
+    print("\t  > Effectifs avant ré-échantillonnage : ")
+    for line in df[strate].squeeze().value_counts().to_string().split('\n'):
+        print("\t\t " + line)
+
+
     if sampling_mode == 'OVER':
         df_sampled = apply_over_sampling(df, strate=strate, sampling_seuil_min=sampling_seuil_min)
     elif sampling_mode == 'UNDER':
         df_sampled = apply_under_sampling(df, strate=strate, sampling_seuil_min=sampling_seuil_min)
     else:
         df_sampled = df.copy()
+        print(f"\t Ré-échantillonnage terminé.")
+        print('---')
 
+        return df_sampled
         
+    print()
+    print("\t  > Tx d'acheteurs après ré-échantillonnage : ", round(100 * df_sampled[target].mean(), 2), '%')
+    print("\t  > Effectifs après ré-échantillonnage :")
+    for line in df_sampled[strate].value_counts().to_string().split('\n'):
+        print("\t\t " + line)
+
+    print(f"\t Ré-échantillonnage en {sampling_mode.lower()}-sampling terminé.")
+    print('---')
+
     return df_sampled
 
 

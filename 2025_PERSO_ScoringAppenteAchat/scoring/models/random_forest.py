@@ -7,15 +7,15 @@ import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 
+
 # Import du fichier d'évaluation des modèles
+sys.path.append(os.path.abspath(path="C:/Users/prince.mezuirotimi/OneDrive - Gedeon - SIPAOF/Documents/INTRASIPA/PROJETS/ADDITI - SCORING APPETENCE PRODUIT/03_models"))
 from evaluate_models import evaluate_model
 from scores_grid import get_scores_grid
-
 
 def apply_random_forest(data_train: pd.DataFrame,
                                         data_val: pd.DataFrame,
                                         data_test: pd.DataFrame,
-                                        dict_encode_mapping: dict = None,
                                         target: str = 'FL_ACHAT_PRODUIT',
                                         threshold_decision: float = 0.5,
                                         beta: float = 1.0,
@@ -36,14 +36,13 @@ def apply_random_forest(data_train: pd.DataFrame,
     X_test, y_test = data_test.drop(columns=[target]), data_test[target]
 
     # Définir la grille des hyperparamètres
-    # {'class_weight': 'balanced', 'max_depth': 5, 'max_features': 'sqrt', 'min_samples_leaf': 5, 'min_samples_split': 2, 'n_estimators': 300}
     param_grid = {
-        'n_estimators': [300], #[100, 300, 500],
-        'max_depth': [5, 10], #[5, 10, 20, None],
-        'min_samples_split': [2], #[2, 5, 10],
-        'min_samples_leaf': [5], #[1, 3, 5],
-        'max_features': ['sqrt'], #['sqrt', 'log2'],
-        'class_weight': ['balanced'] #[None, 'balanced']  
+        'n_estimators': [100, 300, 500],
+        'max_depth': [5, 10, 20, None],
+        'min_samples_split': [2, 5, 10],
+        'min_samples_leaf': [1, 3, 5],
+        'max_features': ['sqrt', 'log2'],
+        'class_weight': [None, 'balanced']  
     }
     
     # Initialisation du modèle
@@ -63,8 +62,8 @@ def apply_random_forest(data_train: pd.DataFrame,
 
     # Meilleur modèle
     best_model = grid_search.best_estimator_
-    score_grid_df = get_scores_grid(best_model, X_train, dict_encode_mapping=dict_encode_mapping)
-
+    score_grid_df = get_scores_grid(best_model, X_train)
+    
     print("\t\t > Meilleurs paramètres trouvés :")
     print("\t\t\t", grid_search.best_params_)
 
