@@ -1,8 +1,10 @@
-Ce dossier regroup l'nesemble du scoring d'appétence produits développé pour ADDITI.
 
-L'ensemble des informations sur ce projet sont contenues dans la Jira SIPADATA-2603
+# Objectif du projet
+
+Ce projet est un scoing d'appétence à l'achat des produits publicitaires d'Additi Média.
 
 
+# Structure du projet 
 ``` 
 ├── 2025_PERSO_ScoringAppenteAchat
 │   │
