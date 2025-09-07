@@ -53,13 +53,6 @@ L'ensemble des informations sur ce projet sont contenues dans la Jira SIPADATA-2
 │   │                                                           
 │   ├── .gitignore                                  <- fichiers et répertoires que git doit ignorer
 │   ├── .gitlab-ci.yml                              <- CI
-│   ├── .pre-commit-congig.yaml                     <-
-│   │                                                                               
-│   ├── .sonar-projet.properties                    <- propriétés sonar par défaut
-│   │                                                                   
-│   ├── CHANGELOG.md                                <-
-│   ├── commitlint.config.js                        <-
-│   ├── git-precommit-checks.config.js              <-
 │   │                                                                           
 │   ├── requirements-dev.txt                        <-
 │   ├── requirements.txt                            <-
