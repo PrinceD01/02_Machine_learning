@@ -5,38 +5,51 @@ L'ensemble des informations sur ce projet sont contenues dans la Jira SIPADATA-2
 
 ``` 
 ├── 2025_PERSO_ScoringAppenteAchat
-│   │                                                               
-│   ├── config
-│   │   └── columns.json                                <- spécification de config des colonnes
-│   │                                                                                                                  
+│   │
 │   ├── analyses
 │   │   ├── Analyse des comportements d'achat.ipynb                      
-│   │   └── Statistiques exploratoires bivariées.ipynb                                                  
-│   │                                                                           
+│   │   └── Statistiques exploratoires bivariées.ipynb
+│   │
+│   ├── config
+│   │   └── columns.json                                <- spécification de config des colonnes
+│   │
 │   └── scoring                                                                         
 │   │   ├── data                                    <- importation et traitement des données
-│   │   │   ├── requete                                                         
-│   │   │   ├── cohorte_new_indicators.py           <- build_features
-│   │   │   ├── cohorte_preprocessing.py            <- process features
-│   │   │   └── cohorte.py                          <- class cohorte
-│   │   │       
-│   │   ├── features                                <- scripts python liés au traitement de la donnée
-│   │   │   ├── splitting.py                                                        
-│   │   │   ├── discretization.py                                               
-│   │   │   ├── regrouping modalities.py                                            
-│   │   │   ├── features_selection.py                                               
-│   │   │   ├── encoding.py                                                             
-│   │   │   └── sampling.py                                                         
-│   │   │                                                                       
+│   │   │   ├── importation
+│   │   │   │   ├── requete_importation.py
+│   │   │   │   ├── cohorte_preprocessing.py
+│   │   │   │   ├── cohorte_new_indicators.py
+│   │   │   │   └── cohorte_class.py
+│   │   │   │
+│   │   │   ├── prepare_models                          
+│   │   │   │   ├── splitting.py
+│   │   │   │   ├── discretization.py
+│   │   │   │   ├── regroup_modalities.py
+│   │   │   │   ├── features_selection.py
+│   │   │   │   ├── sampling.py
+│   │   │   └── └── data_preparation.py                                                     
+│   │   │
 │   │   ├── models                                  <- scripts python d'entraînement de modèles
-│   │   │   │                                       et de calcul des prédictions
-│   │   │   │                                       intègre déjà la partie MLFlow et Pycaret
-│   │   │   ├── train_model.py                                                                  
-│   │   │   └── predict_model.py
-│   │   │                                                                                                       
-│   │   └── visualisation                           <- scripts python pour générer des graphiques
-│   │   │   ├── scores_grid.py                                                  
-│   │   │   └── evaluate_models.py                                                  
+│   │   │   ├── logistic_regression.py
+│   │   │   ├── random_forest.py
+│   │   │   ├── XGBoost.py
+│   │   │   ├── scores_grid.py
+│   │   │   ├── evaluate_models.py
+│   │   └── └── run_models.py
+│   │                                                                                                       
+│   ├── outputs                           <- scripts python pour générer des graphiques
+│   │   ├── notebooks
+│   │   │   ├── Modélisation finale - LR - CIBL'AD.ipynb
+│   │   │   ├── Modélisation finale - RF - CIBL'AD.ipynb
+│   │   │   ├── Modélisation finale - RF - AD4.ipynb
+│   │   │   └── Modélisation finale - RF - La Manchette.ipynb
+│   │   │
+│   │   ├── reports
+│   │   │   └── Présentation projet.pdf  
+│   │   │                                                  
+│   │   ├── streamlit 
+│   │   │   │                                                 
+│   │   └── └── evaluate_models.py                                                  
 │   │                                                           
 │   ├── .gitignore                                  <- fichiers et répertoires que git doit ignorer
 │   ├── .gitlab-ci.yml                              <- CI
